@@ -2,7 +2,7 @@ import java.util.function.Supplier;
 
 public enum PaymentType {
     BLIK(() -> new BlikPayment()),
-    KARTA(() -> new CardPayment()),
+    CARD(() -> new CardPayment()),
     PAYPAL(() -> new PaypalPayment()),
     APPLEPAY(() -> new ApplePayPayment());
 
