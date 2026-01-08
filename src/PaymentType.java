@@ -1,10 +1,10 @@
 import java.util.function.Supplier;
 
 public enum PaymentType {
-    BLIK(() -> new BlikPayment()),
-    KARTA(() -> new CardPayment()),
-    PAYPAL(() -> new PaypalPayment()),
-    APPLEPAY(() -> new ApplePayPayment());
+    BLIK(BlikPayment::new),
+    CARD(CardPayment::new),
+    PAYPAL(PaypalPayment::new),
+    APPLEPAY(ApplePayPayment::new);
 
     private final Supplier<PaymentMethod> creator;
 

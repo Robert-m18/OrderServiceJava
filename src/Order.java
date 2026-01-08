@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Order {
     private int ID;
     private double kwota;
@@ -10,6 +12,18 @@ public class Order {
 
     public int getID() {
         return ID;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return ID == order.ID && Double.compare(kwota, order.kwota) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID, kwota);
     }
 
     public double getKwota() {
